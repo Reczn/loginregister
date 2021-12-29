@@ -6,7 +6,7 @@ const session = require('express-session');
 const app = express();
 require('./config/passport')(passport);
   
-mongoose.connect('mongodb+srv://csa:123@csa.iacv3.mongodb.net/ste?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology:true}).then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
+mongoose.connect('MONGO:URI', {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology:true}).then(() => console.log('MongoDB Connected')).catch(err => console.log(err));
 app.use("/public", express.static(`views/public`));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
